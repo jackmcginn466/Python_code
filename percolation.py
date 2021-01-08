@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Nov 26 17:28:10 2020
-
-@author: Matt
 """
 import numpy as np
 
+#function that runs simple percolation model without travel
 def percolate(lattice, days_infectious = 1, dead_value = 2, probability_of_occupation = 0, probability_of_death = 0, probability_of_recovery = 0, immune_period = 0, lockdown = False, lockdown_percentage_start = 1, lockdown_percentage_end = 0, lockdown_effectiveness = 1):
        size = len(lattice)
        infected = 0
@@ -82,6 +81,7 @@ def percolate(lattice, days_infectious = 1, dead_value = 2, probability_of_occup
                      lockdown = False
        return lattice, lockdown, running
 
+#function that runs simple percolation model with travel
 def percolate_and_travel(lattice, days_infectious = 1, dead_value = 2, probability_of_occupation = 0, probability_of_travel = 0, probability_of_death = 0, probability_of_recovery = 0,  immune_period = 0, lockdown = False, lockdown_percentage_start = 1, lockdown_percentage_end = 0, lockdown_effectiveness = 1):
        size = len(lattice)
        infected = 0

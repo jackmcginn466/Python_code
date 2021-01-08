@@ -1,5 +1,5 @@
-#from pylab import *
-#from scipy.ndimage import measurements
+#Code runs and visualises a simple percolation proccess
+
 from matplotlib import colors
 import matplotlib.pyplot as plt
 import numpy as np

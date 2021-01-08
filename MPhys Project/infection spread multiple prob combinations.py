@@ -1,4 +1,4 @@
-#Produces contour plot of final box dimension of percolation model for different probability combinations for travel and occuptation
+#Produces contour plot of average final box dimension of percolation model for different probability combinations for travel and occuptation
 
 from matplotlib import colors
 import matplotlib.pyplot as plt

@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Nov 26 17:20:06 2020
-
-@author: Matt
 """
+#Calculates box dimension of fractals in our lattice structures 
 
 import numpy as np
 import sys

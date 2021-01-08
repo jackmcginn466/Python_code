@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-#Code produces a graph of occupation probability against percolation probability
+#Code produces a graph of occupation probability against percolation probability. Percolation probability is fraction of simulations that percolate for that occupation probability
 
 daysInfectious = 1 # number of days an infectious person 
 dead_value = daysInfectious

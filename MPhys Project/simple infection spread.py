@@ -22,9 +22,7 @@ seedRow = int(xsize/2)#np.random.randint(0,xsize-1)
 seedColumn = int(ysize/2)#np.random.randint(0,ysize-1)
 dead_value = 2
 
-#for i in range(0, xsize, int(xsize/10)):
-#       for ii in range(0, ysize, int(ysize/10)):
-#              lattice[i][ii] = 1
+
 lattice[seedRow][seedColumn] = 1
 timestep = 0
 
@@ -41,23 +39,16 @@ running = True
 box_dim_list = list()
 box_dim_var_list = list()
 
-while running:     
-       #fig.suptitle('Iteration ' + str(timestep))       
+while running:            
        lattice, lockdown, running = percolate_and_travel(lattice, days_infectious, dead_value, probability_of_occupation, probability_of_travel, probability_of_death, probability_of_recovery, immune_period, lockdown, lockdown_percentage_start, lockdown_percentage_end, lockdown_effectiveness)
       
-       #if lockdown == True:
-        #      mapping.set_title('Lockdown')
-       #else:
-         #     mapping.set_title('No Lockdown')
-        #      timestep += 1
+   
        image.set_data(lattice)
        plt.draw()
        plt.pause(0.001)
        box_dimension, box_dimension_variance = box_count(lattice, np.array(range(2,10)), dead_value)
        box_dim_list.append(box_dimension)
        box_dim_var_list.append(box_dimension_variance)
-       #box_count_linear_fit(lattice, dead_value)
-#box_dimension, box_dimension_variance = box_count(lattice, np.array(range(2,12)), dead_value)#box_count_linear_fit(lattice, dead_value)
 
 box_dim_list = np.array(box_dim_list)
 box_dim_var_list = np.array(box_dim_var_list)

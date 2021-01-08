@@ -4,6 +4,7 @@ import numpy as np
 from percolation import percolate, percolate_and_travel
 from box_counting import box_count, box_count_linear_fit
 
+#lattice size
 xsize = 250
 ysize = 250
 days_infectious = 1
@@ -11,6 +12,7 @@ days_infectious = 1
 occupation_upper = 1
 travel_upper = 1
 
+#percolation variables
 probability_of_occupation = np.linspace(0.04, occupation_upper, 97)
 probability_of_travel = np.linspace(0, travel_upper, 101)
 probability_of_recovery = 0
@@ -24,6 +26,7 @@ seedRow = int(xsize/2)#np.random.randint(0,xsize-1)
 seedColumn = int(ysize/2)#np.random.randint(0,ysize-1)
 dead_value = 2
 
+#make nucleation site
 lattice[seedRow][seedColumn] = 1
 
 lockdown = False
@@ -36,20 +39,23 @@ box_dim_var_list = list()
 #overall_list = ["prob_occ", "prob_travel", "box_dimension each time step"]
 overall_list = list()
 
+#loop through probabilities
 for prob_occ in probability_of_occupation:
        print(prob_occ)
 
        for prob_travel in probability_of_travel:
               print(prob_travel)
-              if prob_travel > 0.5 - 0.5*prob_occ: 
+              if prob_travel > 0.5 - 0.5*prob_occ: ## conditional found from seperate code, probabilities not in this range known to be useless
                      box_dim_average_list = np.zeros(max_timesteps - 1) # because we remove first value from this array as it is always zero
                      #counter = 0
-                     for i in range(0, simulations):# and counter < simulations:
+                     #loop through simulations
+                     for i in range(0, simulations):
                             box_dim_list = np.zeros(max_timesteps)
                             running = True
                             lattice = np.zeros((xsize,ysize))
                             lattice[seedRow][seedColumn] = 1
                             counter = 0
+                            #complete percolation for specific combination and find box dimension value
                             while running and counter < max_timesteps:                              
                                    lattice, lockdown, running = percolate_and_travel(lattice, days_infectious, dead_value, prob_occ, prob_travel, probability_of_death, probability_of_recovery, immune_period, lockdown, lockdown_percentage_start, lockdown_percentage_end, lockdown_effectiveness)
                                   

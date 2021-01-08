@@ -7,6 +7,9 @@ Created on Thu Nov 26 17:20:06 2020
 import numpy as np
 import sys
 import matplotlib.pyplot as plt
+
+#function loops through various box sizes and counts the number of boxes of each size needed to cover fractal
+#This information is used to calculate box dimension
 def box_count(lattice, box_range, dead_value):
        box_sizes = np.array(box_range)
        box_values = np.zeros(len(box_sizes))
@@ -27,6 +30,7 @@ def box_count(lattice, box_range, dead_value):
        coeffs, cov = np.polyfit(np.log(1/box_sizes), np.log(box_values), 1, cov=True, full=False) # best fit line through points to estimate fractal dimension
        return coeffs[0], np.diag(cov)[0]
 
+#Completes same functionalitiy as previous function accept finds the most linear section of the plot for box dimension to calculate it from
 def box_count_linear_fit(lattice, dead_value):
        best_box_dimension = 0.0
        lowest_variance = sys.maxsize

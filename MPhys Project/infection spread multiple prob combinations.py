@@ -80,8 +80,3 @@ ax.set_xticklabels([0.0, 0.2, 0.4, 0.6, 0.8, 1.0])
 ax.set_yticklabels([0.0, 0.2, 0.4, 0.6, 0.8, 1.0])
 cbar = fig.colorbar(cax, ticks=[0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0])
 
-#xx, yy = np.meshgrid(probability_of_occupation, probability_of_travel)
-#contour = plt.contourf(xx, yy, box_dimension_list, np.linspace(0, 2, 201))
-#cbar = plt.colorbar(contour)
-#plt.scatter(xx, yy, marker='o', s=1, color='black', zorder=10)
-#plt.show()

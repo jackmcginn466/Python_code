@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+#Code produces a graph of occupation probability against percolation probability
+
 daysInfectious = 1 # number of days an infectious person 
 dead_value = daysInfectious
 simulations = 100 # number of simulations for each probability

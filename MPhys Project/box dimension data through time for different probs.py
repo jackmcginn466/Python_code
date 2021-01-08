@@ -1,7 +1,5 @@
-#from pylab import *
-#from scipy.ndimage import measurements
-from matplotlib import colors
-import matplotlib.pyplot as plt
+#Calculates box dimension of fractals at each iteration of the percolation proccess for each probability combination for percolation and then saves all this data to a csv
+
 import numpy as np
 from percolation import percolate, percolate_and_travel
 from box_counting import box_count, box_count_linear_fit
@@ -79,10 +77,3 @@ for prob_occ in probability_of_occupation:
               
               
 np.savetxt("data.csv", overall_list, delimiter=",")
-#fig, ax1 = plt.subplots()
-
-#ax1.errorbar(range(0, len(box_dim_list)), box_dim_list, yerr=np.sqrt(box_dim_var_list), linestyle='None', color = 'tab:blue', fmt = 'o') # error bars on points
-#ax1.set_xlabel('Date')
-#ax1.set_ylabel('Box dimension', color='tab:blue')
-#plt.show()
-#print("Box dimension = " + str(box_dimension) + " +/- " + str(np.sqrt(box_dimension_variance)))

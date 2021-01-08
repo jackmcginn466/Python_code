@@ -2,8 +2,8 @@
 """
 Created on Thu Nov  5 16:06:29 2020
 Code to crop images to remove excess whitespace and saves over previous images, performs box counting method on cropped images to find box dimension for each
-and plots box dimension against date for the images. Image names input must be in the form ddmmyyyy
-@author: Matt
+and plots box dimension against date for the images. Image names input must be in the form ddmmyyyy. This is for images of real data of COVID-19 spread produced
+through Tableau software.
 """
 import cv2
 import numpy as np
